@@ -28,12 +28,7 @@ before_install:
   - bundle --version
   - rm -f .bundle/config
 
-bundler_args: --without changelog development docgen guard maintenance omnibus_package tools aix bsd mac_os_x solaris windows --frozen
-
-env:
-  global:
-    # To force us to load the version of bundler we want.
-    BUNDLE_ENABLE_TRAMPOLINE: 1
+bundler_args: --without changelog docgen guard maintenance omnibus_package tools aix bsd mac_os_x solaris windows --frozen
 
 matrix:
   include:

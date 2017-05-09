@@ -27,14 +27,15 @@ gem "chef-dk", path: "."
 # EXPERIMENTAL: ALL gems specified here will be installed in chef-dk omnibus.
 # This represents all gems that will be part of chef-dk.
 
+gem "bundler"
+
 group(:omnibus_package, :development, :test) do
-  gem "rake", "< 12.0"
+  gem "rake"
   gem "pry"
   gem "rdoc"
   gem "yard"
   gem "dep_selector"
   gem "guard"
-  gem "ruby-prof"
   gem "cookstyle", ">= 1.3.0"
   gem "foodcritic", ">= 9.0"
 end
@@ -94,11 +95,16 @@ group(:omnibus_package) do
 
   # TODO Pinning these for now because github_changelog_generator has a bunch
   # of different versions across our products
-  gem "nokogiri", "~> 1.7"
+  gem "nokogiri"
+end
+
+# Everything except AIX
+group(:ruby_prof) do
+  gem "ruby-prof"
 end
 
 # Everything except AIX and Windows
-group(:linux, :bsd, :mac_os_x, :solaris) do
+group(:ruby_shadow) do
   gem "ruby-shadow", platform: :ruby
 end
 
