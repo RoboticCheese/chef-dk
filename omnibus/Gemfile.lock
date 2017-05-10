@@ -6,8 +6,10 @@ GIT
       chef-sugar (>= 3.4.0)
       omnibus (>= 5.5.0)
 
-PATH
-  remote: ../../omnibus
+GIT
+  remote: https://github.com/chef/omnibus.git
+  revision: e9c7189dd861f65aa05eece78b46e9784124b023
+  branch: lcg/improve-appbundling
   specs:
     omnibus (5.5.0)
       aws-sdk (~> 2)
