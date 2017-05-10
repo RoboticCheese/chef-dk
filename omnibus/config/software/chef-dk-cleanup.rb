@@ -1,5 +1,5 @@
 #
-# Copyright 2016 Chef Software, Inc.
+# Copyright 2016-2017, Chef Software Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,10 +19,6 @@ name "chef-dk-cleanup"
 license :project_license
 
 build do
-  # This is where we get the definitions below
-  require_relative "../../files/chef-dk/build-chef-dk"
-  extend BuildChefDK
-
   # Clear the now-unnecessary git caches, cached gems, and git-checked-out gems
   block "Delete bundler git cache and git installs" do
     gemdir = shellout!("#{gem_bin} environment gemdir", env: env).stdout.chomp

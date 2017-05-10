@@ -43,9 +43,6 @@ namespace :dependencies do
                     dependencies:update_omnibus_overrides
                     dependencies:update_omnibus_gemfile_lock
                     dependencies:update_acceptance_gemfile_lock
-                    dependencies:update_kitchen_tests_gemfile_lock
-                    dependencies:update_kitchen_tests_berksfile_lock
-                    dependencies:update_audit_tests_berksfile_lock
                   }
 
   def bundle_update_locked_multiplatform_task(task_name, dir)
@@ -88,10 +85,6 @@ namespace :dependencies do
   bundle_update_locked_multiplatform_task :update_gemfile_lock, "."
   bundle_update_locked_multiplatform_task :update_omnibus_gemfile_lock, "omnibus"
   bundle_update_task :update_acceptance_gemfile_lock, "acceptance"
-  bundle_update_locked_multiplatform_task :update_kitchen_tests_gemfile_lock, "kitchen-tests"
-
-  berks_update_task :update_kitchen_tests_berksfile_lock, "kitchen-tests"
-  berks_update_task :update_audit_tests_berksfile_lock, "kitchen-tests/cookbooks/audit_test"
 
   desc "Update omnibus overrides, including versions in version_policy.rb and latest version of gems: #{OMNIBUS_RUBYGEMS_AT_LATEST_VERSION.keys}."
   task :update_omnibus_overrides do |t, rake_args|
