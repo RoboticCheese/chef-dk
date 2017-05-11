@@ -410,7 +410,7 @@ GEM
     fog-voxel (0.1.0)
       fog-core
       fog-xml
-    fog-vsphere (1.9.1)
+    fog-vsphere (1.9.2)
       fog-core
       rbvmomi (~> 1.9)
     fog-xenserver (0.3.0)
@@ -472,7 +472,7 @@ GEM
     inflecto (0.0.2)
     inifile (3.0.0)
     iniparse (1.4.2)
-    inspec (1.23.0)
+    inspec (1.24.0)
       addressable (~> 2.4)
       faraday (>= 0.9.0)
       hashie (~> 3.4)
@@ -495,7 +495,7 @@ GEM
     jmespath (1.3.1)
     json (1.8.6)
     jwt (1.5.6)
-    kitchen-dokken (2.1.5)
+    kitchen-dokken (2.1.6)
       docker-api (~> 1.33)
       test-kitchen (~> 1.15)
     kitchen-ec2 (1.3.2)
@@ -542,7 +542,7 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitar (0.5.4)
-    minitest (5.10.1)
+    minitest (5.10.2)
     mixlib-archive (0.4.1)
       mixlib-log
     mixlib-authentication (1.4.1)
@@ -577,11 +577,11 @@ GEM
       net-ssh-gateway (>= 1.2.0)
     net-telnet (0.1.1)
     nio4r (2.0.0)
-    nokogiri (1.7.1)
+    nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
-    nokogiri (1.7.1-x64-mingw32)
+    nokogiri (1.7.2-x64-mingw32)
       mini_portile2 (~> 2.1.0)
-    nokogiri (1.7.1-x86-mingw32)
+    nokogiri (1.7.2-x86-mingw32)
       mini_portile2 (~> 2.1.0)
     nori (2.6.0)
     notiffany (0.1.1)
@@ -703,7 +703,7 @@ GEM
       addressable (>= 2.3.5, < 2.6)
       faraday (~> 0.8, < 1.0)
     semverse (2.0.0)
-    serverspec (2.38.0)
+    serverspec (2.38.1)
       multi_json
       rspec (~> 3.0)
       rspec-its
