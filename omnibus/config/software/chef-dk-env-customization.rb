@@ -1,5 +1,5 @@
 #
-# Copyright:: Copyright (c) 2015 Chef Software, Inc.
+# Copyright:: Copyright (c) 2015-2017, Chef Software Inc.
 # License:: Apache License, Version 2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,18 +26,17 @@ source path: "#{project.files_path}/#{name}"
 dependency "ruby"
 
 build do
-  block "Add chefdk_env_customization file" do
-    source_customization_file = "#{project_dir}/windows/chefdk_env_customization.rb"
+  source_customization_file = "#{project_dir}/windows/chefdk_env_customization.rb"
 
-    site_ruby = Bundler.with_clean_env do
-      ruby = windows_safe_path("#{install_dir}/embedded/bin/ruby")
-      `#{ruby} -rrbconfig -e "puts RbConfig::CONFIG['sitelibdir']"`.strip
-    end
-
-    if site_ruby.nil? || site_ruby.empty?
-      raise "Could not determine embedded Ruby's site directory, aborting!"
-    end
-
-    FileUtils.cp source_customization_file, site_ruby
+  site_ruby = Bundler.with_clean_env do
+    ruby = windows_safe_path("#{install_dir}/embedded/bin/ruby")
+    `#{ruby} -rrbconfig -e "puts RbConfig::CONFIG['sitelibdir']"`.strip
   end
+
+  if site_ruby.nil? || site_ruby.empty?
+    raise "Could not determine embedded Ruby's site directory, aborting!"
+  end
+
+  mkdir site_ruby
+  copy_file source_customization_file, site_ruby
 end
