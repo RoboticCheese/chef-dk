@@ -26,17 +26,19 @@ source path: "#{project.files_path}/#{name}"
 dependency "ruby"
 
 build do
-  source_customization_file = "#{project_dir}/windows/chefdk_env_customization.rb"
+  block "Add chefdk_env_customization file" do
+    source_customization_file = "#{project_dir}/windows/chefdk_env_customization.rb"
 
-  site_ruby = Bundler.with_clean_env do
-    ruby = windows_safe_path("#{install_dir}/embedded/bin/ruby")
-    `#{ruby} -rrbconfig -e "puts RbConfig::CONFIG['sitelibdir']"`.strip
+    site_ruby = Bundler.with_clean_env do
+      ruby = windows_safe_path("#{install_dir}/embedded/bin/ruby")
+      `#{ruby} -rrbconfig -e "puts RbConfig::CONFIG['sitelibdir']"`.strip
+    end
+
+    if site_ruby.nil? || site_ruby.empty?
+      raise "Could not determine embedded Ruby's site directory, aborting!"
+    end
+
+    mkdir site_ruby
+    copy_file source_customization_file, site_ruby
   end
-
-  if site_ruby.nil? || site_ruby.empty?
-    raise "Could not determine embedded Ruby's site directory, aborting!"
-  end
-
-  mkdir site_ruby
-  copy_file source_customization_file, site_ruby
 end
