@@ -29,6 +29,8 @@ dependency "libxslt"
 dependency "liblzma"
 dependency "zlib"
 
+dependency "nokogiri"
+
 # For berkshelf
 dependency "libarchive"
 
