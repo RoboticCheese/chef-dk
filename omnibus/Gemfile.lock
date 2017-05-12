@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/chef/omnibus.git
-  revision: 51fc27df831144990231fcdff283ead4808643c7
+  revision: c2dd37903caa5457763b64561c07e26c848dc749
   branch: lcg/improve-appbundling
   specs:
     omnibus (5.5.0)
@@ -73,7 +73,7 @@ GEM
     celluloid-io (0.16.2)
       celluloid (>= 0.16.0)
       nio4r (>= 1.1.0)
-    chef-config (13.0.118)
+    chef-config (13.1.7)
       addressable
       fuzzyurl
       mixlib-config (~> 2.0)
