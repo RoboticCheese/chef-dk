@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/chef/omnibus.git
-  revision: 0242b0b7600f61d29ac6481db9162c0dcd7b3991
+  revision: 1b10c4e7d7cfa7bf1d0a03f5045d27d9fe31f4b1
   branch: lcg/improve-appbundling
   specs:
     omnibus (5.5.0)
