@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/chef/omnibus.git
-  revision: e9c7189dd861f65aa05eece78b46e9784124b023
+  revision: 51fc27df831144990231fcdff283ead4808643c7
   branch: lcg/improve-appbundling
   specs:
     omnibus (5.5.0)
@@ -31,13 +31,13 @@ GEM
       public_suffix (~> 2.0, >= 2.0.2)
     artifactory (2.8.1)
     awesome_print (1.7.0)
-    aws-sdk (2.9.16)
-      aws-sdk-resources (= 2.9.16)
-    aws-sdk-core (2.9.16)
+    aws-sdk (2.9.17)
+      aws-sdk-resources (= 2.9.17)
+    aws-sdk-core (2.9.17)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.9.16)
-      aws-sdk-core (= 2.9.16)
+    aws-sdk-resources (2.9.17)
+      aws-sdk-core (= 2.9.17)
     aws-sigv4 (1.0.0)
     berkshelf (5.6.5)
       addressable (~> 2.3, >= 2.3.4)
@@ -73,7 +73,7 @@ GEM
     celluloid-io (0.16.2)
       celluloid (>= 0.16.0)
       nio4r (>= 1.1.0)
-    chef-config (13.0.118)
+    chef-config (13.1.7)
       addressable
       fuzzyurl
       mixlib-config (~> 2.0)
