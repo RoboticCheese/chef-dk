@@ -1,7 +1,6 @@
 name "chef-dk"
 default_version "local_source"
 
-
 license :project_license
 
 # For the specific super-special version "local_source", build the source from
