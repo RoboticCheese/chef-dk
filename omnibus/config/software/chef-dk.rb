@@ -62,7 +62,7 @@ build do
 
   gem "install chef*.gem --no-ri --no-rdoc --verbose", env: env
 
-  appbundle "chef-dk", env: env
+  appbundle "chef-dk", lockdir: project_dir, env: env
   appbundle "berkshelf", lockdir: project_dir, env: env
   appbundle "chef-vault", lockdir: project_dir, env: env
   appbundle "chef", lockdir: project_dir, env: env
