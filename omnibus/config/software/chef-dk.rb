@@ -75,6 +75,10 @@ build do
   appbundle "inspec", lockdir: project_dir, env: env
   appbundle "dco", lockdir: project_dir, env: env
 
+  block "XXX: hack" do
+    system "rm -f /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/*/Gemfile.lock"
+  end
+
   # Clear the now-unnecessary git caches, cached gems, and git-checked-out gems
   block "Delete bundler git cache and git installs" do
     gemdir = shellout!("#{install_dir}/embedded/bin/gem environment gemdir", env: env).stdout.chomp
